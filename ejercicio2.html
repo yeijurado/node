@@ -1,0 +1,37 @@
+<script>
+    function ordenarNumeros(numeros) {
+
+        for (let i = 0; i < numeros.length - 1; i++) {
+            for (let j = 0; j < numeros.length - i - 1; j++) {
+                if (numeros[j] < numeros[j + 1]) {
+                    [numeros[j], numeros[j + 1]] = [numeros[j + 1], numeros[j]];
+                }
+            }
+        }
+    }
+
+    function soloNumeros(array){
+        var soloenteros = [];
+        for (var i = 0; i < array.length; i++) {
+            if (typeof(array[i])=="number") { 
+//              soloenteros[i] = array[i];
+                soloenteros.push(array[i]);
+            }; 
+        }
+    return soloenteros;
+}  
+
+    let datos = ["unacadena",3,9,1,10,500,1,10,true];
+
+    try {
+            console.log(datos);
+            ordenarNumeros(datos);
+            let soloenteros = soloNumeros(datos);
+            console.log(soloenteros);
+        } catch (e) {
+            console.log (`Error: ${e.message}`);
+        }
+
+
+
+</script>
