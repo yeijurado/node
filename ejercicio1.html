@@ -1,0 +1,47 @@
+<script>
+    
+    addEventListener('load', function() {
+
+        ejecutarPrograma();
+
+        function ejecutarPrograma() {
+            let numeroDeElementos = parseInt(prompt('Ingrese a cantidad de elementos'));
+
+            if (Number.isInteger(numeroDeElementos) && numeroDeElementos>0) {
+                
+                let arrayFibonacci = generarFibonacci(numeroDeElementos);
+                imprimirArray(arrayFibonacci);
+
+            } else {
+                console.log ('el número ingresado no es mayor que cero o no es un número')
+            }
+
+
+            console.log(numeroDeElementos);
+        }
+
+        function generarFibonacci(numeroDeElementos) {
+            let fn = [0,1];
+            let a = 0;
+            if (numeroDeElementos <=1) {
+                return fn;
+            }
+
+            for (let i = 2; i <  numeroDeElementos; i++) {
+                fn[i] = fn[i - 1] + fn[i - 2];
+            }
+            return fn;
+
+        }
+
+        function imprimirArray(array) {
+            for(let i=0; i < array.length; i++) {
+                console.log(array[i]);
+            }
+        }
+    
+        
+
+    })
+
+</script>
